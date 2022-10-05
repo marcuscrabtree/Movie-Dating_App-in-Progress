@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import '../styled/Login.css'
 import {useNavigate} from 'react-router-dom'
 
-function Login( {onLogin} ) {
+function Login(  ) {
     let [authMode, setAuthMode] = useState("signin")
     const [username, setUsername] = useState("")
 
@@ -27,7 +27,7 @@ function Login( {onLogin} ) {
         body: JSON.stringify({username}),
       })
       .then(res => res.json())
-      .then((user) => onLogin(user))
+      .then((user) => console.log(user))
     }
   
     if (authMode === "signin") {
